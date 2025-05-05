@@ -1,0 +1,21 @@
+---
+name: Chrome - Multi-Tab Browsing
+author: Gladysfotsa <gladysfotsa99@gmail.com>
+description: Chrome multi-tab test with CNN, BBC, and National Geographic
+
+architecture: Linux
+
+services:
+  chrome-container:
+    image: gladysfotsa/chrome_multitab_image
+    command: /usr/local/bin/chrome-entry.sh
+
+flow:
+  - name: Multi-tab browsing
+    container: chrome-container
+    commands:
+      - type: console
+        command: echo "Opening multiple tabs in Chrome..."
+      - type: console
+        command: sleep 60
+        note: Wait for pages to remain open
